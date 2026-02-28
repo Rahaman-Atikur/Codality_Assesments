@@ -14,26 +14,23 @@ For example, given N = 1041 the function should return 5, because N has binary r
 Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..2,147,483,647].
-
-
 */
 
 
-function solution(N: number): number{
-    const binary = N.toString(2);
+function solution(N: number): number {
+    let binary = N.toString(2);
     let maxGap = 0;
     let currentGap = 0;
-
     for (let i = 0; i < binary.length; i++) {
         if (binary[i] === '1') {
             if (currentGap > maxGap) {
                 maxGap = currentGap;
             }
             currentGap = 0;
-        } else {
+        }
+        else {
             currentGap++;
         }
     }
-
     return maxGap;
 }
