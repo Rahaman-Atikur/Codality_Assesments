@@ -41,11 +41,13 @@ In your solution, focus on correctness. The performance of your solution will no
  * 
  */
 
+
 function solution(A: number[], K: number): number[]{
     if(A.length === 0) return A;
-    const rotations : number = K %A.length;
+
+    const rotations : number = K%A.length;
     for(let i=0;i<rotations;i++){
-        const  lastElement: number = A.pop()!;
+        const lastElement : number = A.pop()!;
         A.unshift(lastElement);
     }
     return A;
