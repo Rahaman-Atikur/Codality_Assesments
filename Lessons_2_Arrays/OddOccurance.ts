@@ -34,12 +34,20 @@ all but one of the values in A occur an even number of times.
  */
 
 
-function solution(A: number[]): number{
-  let  result : number = 0;
-  let final : number = 0;
-  for(let i=0;i<A.length;i++){
-   let final: number =  result ^= A[i];
-  }
-  return final;
+// function solution(A: number[]): number{
+//   let  result : number = 0;
+//   let final : number = 0;
+//   for(let i=0;i<A.length;i++){
+//    let final: number =  result ^= A[i];
+//   }
+//   return final;
 
+// }
+
+function solution(A: number[]): number{
+  let expectedDigit : number =0;
+  for(let i=0;i<A.length;i++){
+    expectedDigit ^=A[i];
+  }
+  return expectedDigit;
 }
