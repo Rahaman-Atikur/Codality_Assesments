@@ -24,7 +24,11 @@ X, Y and D are integers within the range [1..1,000,000,000];
 X ≤ Y.*/
 
 
+// function solution(X: number, Y: number, D: number): number{
+//     const result : number = Math.ceil((Y-X)/D);
+//     return result;
+// }
+
 function solution(X: number, Y: number, D: number): number{
-    const result : number = Math.ceil((Y-X)/D);
-    return result;
+   return Math.ceil((Y-X)/D);
 }
