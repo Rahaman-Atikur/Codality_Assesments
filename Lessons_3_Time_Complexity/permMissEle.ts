@@ -25,14 +25,26 @@ each element of array A is an integer within the range [1..(N + 1)].
  */
 
 
-function solution(A: number[]): number{
-    const n : number = A.length;
-    let xor : number =0;
-    for(let i=1; i<=n+1;i++){
-        xor ^= i;
+// function solution(A: number[]): number{
+//     const n : number = A.length;
+//     let xor : number =0;
+//     for(let i=1; i<=n+1;i++){
+//         xor ^= i;
+//     }
+//     for(let num of A){
+//         xor ^= num;
+//     }
+//     return xor;
+// }
+
+function solution(A: number[]): number {
+    const n: number = A.length;
+    let xor: number = 0;
+    for (let i = 1; i <= n + 1; i++) {
+        xor = xor ^ i;
     }
-    for(let num of A){
-        xor ^= num;
+    for (let num of A) {
+        xor = xor ^ num;
     }
     return xor;
 }
