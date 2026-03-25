@@ -30,5 +30,6 @@ X ≤ Y.*/
 // }
 
 function solution(X: number, Y: number, D: number): number{
-   return Math.ceil((Y-X)/D);
+const jumpsNeeded: number = Math.ceil((Y-X)/D);
+return jumpsNeeded;
 }
