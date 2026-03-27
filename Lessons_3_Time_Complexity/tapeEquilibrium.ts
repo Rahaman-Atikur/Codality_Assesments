@@ -40,22 +40,42 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [2..100,000];
 each element of array A is an integer within the range [−1,000..1,000].
 */
-function solution(A: number[]): number {
-    let leftSum: number = 0;
-    let rightSum: number = 0;
-    let totalSum: number = 0;
-    for (let i = 0; i < A.length; i++) {
-        totalSum += A[i];
-    }
+// function solution(A: number[]): number {
+//     let leftSum: number = 0;
+//     let rightSum: number = 0;
+//     let totalSum: number = 0;
+//     for (let i = 0; i < A.length; i++) {
+//         totalSum += A[i];
+//     }
 
-    let minDifference: number = Infinity;
-    for (let p = 1; p < A.length; p++) {
-        leftSum += A[p - 1];
+//     let minDifference: number = Infinity;
+//     for (let p = 1; p < A.length; p++) {
+//         leftSum += A[p - 1];
+//         rightSum = totalSum - leftSum;
+//         const difference: number = Math.abs(leftSum - rightSum);
+//         if (difference < minDifference) {
+//             minDifference = difference;
+//         }
+//     }
+//     return minDifference;
+// }
+
+function solution(A: number[]): number{
+    let totalSum : number = 0;
+    for(let i=0; i<A.length;i++){
+        totalSum = totalSum + A[i];
+    }
+    let leftSum : number = 0;
+    let rightSum : number =0;
+    let minDifference : number = Infinity;
+
+    for(let p=1; p<A.length;p++){
+        leftSum = leftSum + A[p-1];
         rightSum = totalSum - leftSum;
-        const difference: number = Math.abs(leftSum - rightSum);
+        const difference : number = Math.abs(leftSum - rightSum);
         if (difference < minDifference) {
             minDifference = difference;
         }
     }
-    return minDifference;
+    return minDifference; // Replace this with the actual minimal difference
 }
